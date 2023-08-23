@@ -18,8 +18,10 @@ if __name__ == "__main__":
     except Exception:
         exit()
 
-    emp_response = requests.get(f"https://jsonplaceholder.typicode.com/users/{emp_id}")
-    todos_response = requests.get(f"https://jsonplaceholder.typicode.com/users/{emp_id}/todos")
+    emp_response = requests.get(
+        f"https://jsonplaceholder.typicode.com/users/{emp_id}")
+    todos_response = requests.get(
+        f"https://jsonplaceholder.typicode.com/users/{emp_id}/todos")
 
     for task in todos_response.json():
         if task.get("completed") is True:
